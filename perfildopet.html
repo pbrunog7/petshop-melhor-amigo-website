@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melhor Amigo - Perfil do Pet</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages/perfildopet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <section class="section__container">
+            <div class="section__header">
+                <p class="section__label">Com tecnologia e carinho</p>
+                <h1 class="section__title">Perfil do Pet</h1>
+                <p class="section__text">
+                    Digite o nome, a raça e algumas características do seu pet, e nossa IA vai criar uma descrição especial e personalizada para ele. Você ainda pode salvar o resultado como um cartão para guardar de lembrança!
+                </p>
+            </div>
+        </section>
+
+        <section class="pet-profile">
+            <!-- Coluna esquerda: formulário -->
+            <div class="pet-form__box">
+                <h2 class="pet-form__title">
+                    <i class="fa-solid fa-paw"></i> Conte-nos sobre seu pet
+                </h2>
+                <p class="pet-form__subtitle">
+                    Quanto mais detalhes você compartilhar, mais especial ficará a descrição!
+                </p>
+
+                <form class="pet-form" id="petForm" novalidate>
+
+                    <!-- Nome do pet -->
+                    <div class="pet-form__group">
+                        <label for="petName" class="pet-form__label">Nome do pet *</label>
+                        <input
+                            class="pet-form__input"
+                            type="text"
+                            id="petName"
+                            name="petName"
+                            placeholder="Ex: Thor, Bolinha, Mingau..."
+                            autocomplete="off"
+                            required
+                        >
+                        <!-- Mensagem de erro via JS -->
+                        <span class="pet-form__error" id="petNameError"></span>
+                    </div>
+
+                    <!-- Gênero do pet -->
+                    <div class="pet-form__group">
+                        <p class="pet-form__label">Gênero *</p>
+                        <div class="pet-form__radio-group">
+                            <label class="pet-form__radio-label">
+                                <input type="radio" name="petGender" value="macho"> Macho
+                            </label>
+                            <label class="pet-form__radio-label">
+                                <input type="radio" name="petGender" value="femea"> Fêmea
+                            </label>
+                        </div>
+                        <span class="pet-form__error" id="petGenderError"></span>
+                    </div> 
+
+                    <!-- Raça do pet -->
+                    <div class="pet-form__group">
+                        <label for="petBreed" class="pet-form__label">Raça *</label>
+                        <input
+                            class="pet-form__input"
+                            type="text"
+                            id="petBreed"
+                            name="petBreed"
+                            placeholder="Ex: Golden Retriever, SRD, Persa..."
+                            autocomplete="off"
+                            required
+                        >
+                        <!-- Mensagem de erro via JS -->
+                        <span class="pet-form__error" id="petBreedError"></span>
+                    </div>                   
+
+                    <!-- Descrição livre -->
+                    <div class="pet-form__group">
+                        <label for="petDescription" class="pet-form__label">Conte um pouco sobre ele *</label>
+                        <textarea
+                            class="pet-form__input pet-form__textarea"
+                            id="petDescription"
+                            name="petDescription"
+                            placeholder="Ex: É muito brincalhão, adora dormir no sol, tem medo de trovão, conquistou o coração de toda a família..."
+                            required
+                        ></textarea>
+                        <!-- Mensagem de erro via JS -->
+                        <span class="pet-form__error" id="petDescriptionError"></span>
+                    </div>
+
+                    <!-- Botão de envio -->
+                    <button type="submit" class="btn btn--primary pet-form__submit" id="petSubmitBtn">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Gerar descrição
+                    </button>
+
+                </form>
+            </div>
+
+            <!-- Coluna direita: área de resultado -->
+            <div class="pet-result__box" id="petResultBox">
+
+                <!-- Estado inicial: instrução para o usuário -->
+                <div class="pet-result__placeholder" id="petPlaceholder">
+                    <!-- Ícone único: troca de direção via CSS conforme o breakpoint -->
+                    <i class="fa-solid pet-result__placeholder-icon"></i>
+                    <p>Preencha o formulário ao lado e clique em <strong>"Gerar descrição"</strong> para criar o perfil do seu pet!</p>
+                    <p>Por volta de 30 segundos o card do seu pet será todo seu!</p>
+                </div>
+
+                <!-- Loading -->
+                <div class="pet-result__loading hidden" id="petLoading">
+                    <div class="pet-result__spinner"></div>
+                    <p>Criando a descrição do seu pet com carinho...</p>
+                </div>
+
+                <!-- Card do resultado: injetado dinamicamente pelo JS após a resposta da IA -->
+                <div id="petCardContainer"></div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/perfildopet.js"></script>
+</body>
+</html>

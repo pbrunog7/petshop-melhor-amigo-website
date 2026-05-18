@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melhor Amigo - Contato</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages/contato.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <main>
+        <section class="section__container">
+             <div class="section__header">
+                <p class="section__label">Estamos aqui para ajudar</p>
+                <h1 class="section__title">Fale com a gente</h1>
+                <p class="section__text">
+                    Estamos ansiosos para conhecê-lo e ao seu melhor amigo! Entre em contato por telefone, e-mail ou pelo formulário abaixo.
+                </p>
+            </div>
+        </section>
+
+        <section class="contact">
+            <!-- Coluna esquerda -->
+            <div class="contact__cards">
+                <h2 class="contact__title">Informações de contato</h2>
+                <p>
+                    Seu pet merece o melhor, e nós estamos aqui para fornecer exatamente isso. Confie no Petshop "Melhor Amigo" para cuidar do seu melhor amigo como se fosse nosso próprio.
+                </p>
+            
+                <!-- Cards -->
+                <div class="info-cards">
+                    <div class="info-card">   
+                        <i class="fa-solid fa-location-arrow"></i>
+                        <div>
+                            <p class="info-card__label">Endereço</p>
+                            <p>Rua dos Animais, 123<br>São Paulo, SP - CEP 09876-543</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">   
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <p class="info-card__label">Telefone</p>
+                            <p>(11) 98765-4321</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">   
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <p class="info-card__label">E-mail</p>
+                            <p>contato@melhoramigo.com.br</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">   
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <p class="info-card__label">Horário de Funcionamento</p>
+                            <p>Seg - Sex: 08h às 18h<br>Sábado: 08h às 14h</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p class="social__label">Nos siga nas redes</p>
+                    <div class="social__icons">
+                        <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-square-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna direita -->
+            <div class="contact-form__box">
+                <h2 class="contact__title">Envie uma mensagem</h2>
+                <form class="contact-form" id ="contactForm" novalidate>
+                    <div class="contact-form__row">
+                        <div class="contact-form__group">
+                            <label for="name" class="contact-form__label">Nome completo *</label>
+                            <input
+                                class="contact-form__input"
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Seu nome"
+                                autocomplete="name"
+                                required
+                            >
+                            <!-- Mensagem de erro - Via JS -->
+                             <span class="contact-form__error" id="nameError"></span>
+                        </div>
+                        
+                        <div class="contact-form__group">
+                            <label for="phone" class="contact-form__label">Telefone</label>
+                            <input
+                                class="contact-form__input"
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="(00) 00000-0000"
+                                autocomplete="tel"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="contact-form__group">
+                        <label for="email" class="contact-form__label">E-mail *</label>
+                        <input
+                            class="contact-form__input"
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="seu@email.com"
+                            autocomplete="email"
+                            required
+                        >
+                        <!-- Mensagem de erro - Via JS -->
+                        <span class="contact-form__error" id="emailError"></span>
+                    </div>
+
+                    <div class="contact-form__group">
+                        <label for="subject" class="contact-form__label">Assunto *</label>
+                        <select class="contact-form__input contact-form__select" id="subject" name="title">
+                            <option value="">Selecione um assunto</option>
+                            <option value="Tosa">Tosa</option>
+                            <option value="Banho">Banho</option>
+                            <option value="Racao">Ração</option>
+                            <option value="Higiene">Produtos de higiene</option>
+                            <option value="Brinquedos">Brinquedos e acessórios</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                        <!-- Mensagem de erro - Via JS -->
+                        <span class="contact-form__error" id="subjectError"></span>
+                    </div>
+
+                    <div class="contact-form__group">
+                        <label for="message" class="contact-form__label">Mensagem *</label>
+                        <textarea
+                            class="contact-form__input contact-form__textarea"
+                            id="message"
+                            name="message"
+                            placeholder="Como podemos ajudar você e seu pet?"
+                            required
+                        ></textarea>
+                        <!-- Mensagem de erro - Via JS -->
+                        <span class="contact-form__error" id="messageError"></span>
+                    </div>
+
+                    <div class="contact-form__checkbox">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter">
+                            Quero receber novidades e promoções do Petshop Melhor Amigo por e-mail.
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary contact-form__submit" id="submitBtn">
+                        Enviar mensagem
+                    </button>
+
+                    <!-- Feedback de envio -->
+                    <div class="form__feedback" id="formFeedback"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+    
+    <!-- 1. Biblioteca do EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- 2. Inicialização do EmailJS (IIFE) -->
+    <script>
+        (function() {
+            emailjs.init({ publicKey: "qzKDY4l66cKJ4_jpB" });
+        })();
+    </script>    
+    <script src="js/main.js"></script>
+    <script src="js/contato.js"></script>
+</body>
+</html>
