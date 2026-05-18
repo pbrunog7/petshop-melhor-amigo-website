@@ -81,7 +81,7 @@ petForm.addEventListener('submit', async (event) => {
     async function generatePetDescription(name, gender, breed, details) {
     try {
         // fetch() faz a requisição HTTP para a API do Gemini
-        const response = await fetch("http://127.0.0.1:5000/gerar-perfil-pet", {
+        const response = await fetch("https://petshop-melhor-amigo-api.onrender.com/gerar-perfil-pet", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
