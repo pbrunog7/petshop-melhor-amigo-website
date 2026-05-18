@@ -12,6 +12,10 @@
 
 </div>
 
+<p>
+  <a href="https://pbrunog7.github.io/petshop-melhor-amigo-website/">🌐 Ver projeto online</a>
+</p>
+
 ---
 
 ## 📖 Sobre o Projeto
