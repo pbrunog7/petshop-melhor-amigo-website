@@ -54,6 +54,8 @@ O site conta com cinco páginas, design responsivo Mobile First e uma feature de
 
 ✅ **Formulário de contato** com validação independente por campo e integração com EmailJS
 
+✅ **Responsividade Mobile First** com media queries por arquivo de página
+
 ✅ **Gerador de perfil de pet com IA**
   - Formulário com validação (nome, gênero, raça e descrição livre)
   - Loading state animado durante o processamento
@@ -61,7 +63,9 @@ O site conta com cinco páginas, design responsivo Mobile First e uma feature de
   - Opção de salvar o perfil como PDF
   - Comunicação segura via API Flask — chave do Gemini protegida no servidor
 
-✅ **Responsividade Mobile First** com media queries por arquivo de página
+<p align="left">
+  <img src="./assets/images/demo.gif" alt="Demonstração do Petshop Melhor Amigo" width="800"/>
+</p>
 
 ---
 
